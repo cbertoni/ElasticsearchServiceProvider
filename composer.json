@@ -20,12 +20,21 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "silex/silex"                 : "~1.1",
-        "elasticsearch/elasticsearch" : "~1.0"
+        "elasticsearch/elasticsearch" : "~5.0"
     },
     "require-dev": {
-        "phpunit/phpunit"     : "@stable",
-        "fabpot/php-cs-fixer" : "@stable"
+        "silex/silex"               : "~2.0",
+        "guzzlehttp/guzzle"         : "^6.2.1",
+        "aws/aws-sdk-php"           : "~3.0",
+        "phpunit/phpunit"           : "~4.8",
+        "friendsofphp/php-cs-fixer" : "~2.0",
+        "doctrine/cache"            : "~1.4"
+    },
+    "suggest": {
+        "silex/silex": "Allows the registration of the ES client into a Silex container. Works with ~1.0|~2.0 versions.",
+        "guzzlehttp/guzzle": "Needed for AWS token generation for interacting with an Elasticsearch hosted in AWS. Works with ^5.3.1|^6.2.1 versions.",
+        "aws/aws-sdk-php": "Needed for AWS token generation for interacting with an Elasticsearch hosted in AWS. Works with ~3.0 version.",
+        "doctrine/cache": "Needed for AWS token generation for interacting with an Elasticsearch hosted in AWS. Works with ~1.4 version."
     },
     "autoload": {
         "psr-4": {
@@ -35,6 +44,11 @@
     "autoload-dev": {
         "psr-4": {
             "xmarcos\\Silex\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "5.6"
         }
     }
 }

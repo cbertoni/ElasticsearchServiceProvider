@@ -71,7 +71,7 @@ class ElasticsearchClientAWSSignatureFactory
             // translate the URI
             $psr7_uri = (new Uri($request['uri']))
                 ->withScheme($config['scheme'])
-                ->withHost($config['host']);
+                ->withHost($config['hosts'][0]);
 
             // clear host from headers
             unset($request['headers']['host']);
